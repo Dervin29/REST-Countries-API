@@ -17,10 +17,10 @@ const CountryDetail = () => {
   }
 
   return (
-    <section className={`  flex flex-col justify-center items-center min-h-[calc(100vh-64px)] p-4 lg:px-12 ${darkMode ? 'bg-darkModeBackground text-white' : 'text-lightModeText'}`} >
-      <div className="w-full flex justify-start sm:px-6 lg:px-2">
+    <section className={`  flex flex-col justify-center items-center gap-4 sm:gap-8 min-h-[calc(100vh-64px)] p-4 lg:px-12 ${darkMode ? 'bg-darkModeBackground text-white' : 'text-lightModeText'}`} >
+      <div className=" max-w-screen-lg  mx-auto w-full flex justify-start  sm:px-6 lg:px-2">
         <button
-          className={`flex items-center gap-4 font-semibold px-6 py-2 mb-8 rounded-md ${darkMode ? 'text-white bg-darkModeElements shadow-md shadow-darkModeElements' : 'text-lightModeText shadow-md'}`}
+          className={`flex items-center gap-4 font-semibold px-6 py-2 rounded-md ${darkMode ? 'text-white bg-darkModeElements shadow-md shadow-darkModeElements' : 'text-lightModeText shadow-md'}`}
           onClick={() => navigate(-1)}
         >
           {darkMode ? (

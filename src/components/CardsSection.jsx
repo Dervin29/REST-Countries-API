@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import noDataImg from "../assets/images/no_data.svg";
 import { useDarkMode } from "../context/DarkModeContext";
+import { CiSearch } from "react-icons/ci";
 
 const CardsSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -38,20 +39,25 @@ const CardsSection = () => {
       }`}
     >
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:justify-between">
-        <input
-          type="text"
-          className={`border-none outline-none rounded-md px-4 sm:px-8 py-2 sm:py-4 w-full sm:w-1/2 lg:w-1/3 ${
-            darkMode
-              ? "bg-darkModeElements text-white shadow-md shadow-darkModeElements  "
-              : "bg-white text-lightModeText shadow-md "
-          }`}
-          placeholder="Search by country..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+
+        <div className={`rounded-md px-4 py-2 shadow-md flex items-center w-full sm:w-1/2 lg:w-1/3 
+          ${darkMode ?  "bg-darkModeElements text-white shadow-darkModeElements" : ""}`}>
+          <CiSearch className="w-5 h-5" />
+          <input
+            type="text"
+            className={`border-none outline-none rounded-md px-4  py-2 sm:py-4 w-full ${
+              darkMode
+                ? "bg-darkModeElements text-white  shadow-darkModeElements  "
+                : "bg-transparent text-lightModeText  "
+            }`}
+            placeholder="Search by country..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
         <select
-          className={`border-none outline-none rounded-md p-2 w-full sm:w-1/2 lg:w-1/4 ${
+          className={`border-none outline-none rounded-md px-4 py-2 sm:py-4 w-full sm:w-1/2 lg:w-1/4 ${
             darkMode
               ? "bg-darkModeElements text-white shadow-md shadow-darkModeElements "
               : "bg-white text-lightModeText shadow-md"
